@@ -5,7 +5,7 @@ enum Interest {
   HOMEWORK
 }
 
-enum expMonth {
+enum Expmonth {
   JANUARY
   FEBRUARY
   MARCH
@@ -20,21 +20,21 @@ enum expMonth {
   DECEMBER
 }
 
-enum expYear {
-  2025
-  2024
-  2023
-  2022
-  2021
-  2020
-  2019
-  2018
-  2017
-  2016
-  2015
-  2014
-  2013
-}
+# enum Expyear{
+#   2025
+#   2024
+#   2023
+#   2022
+#   2021
+#   2020
+#   2019
+#   2018
+#   2017
+#   2016
+#   2015
+#   2014
+#   2013
+# }
 
 type Contact @model{
   id: ID! @isUnique
@@ -71,7 +71,7 @@ type PersonalInfo @model {
   parentName: String!
   parentEmail: String!
   parentAddress: String!
-  parentPhoneNumber: Number!
+  parentPhoneNumber: String!
   teacherEmail: String!
 }
 
@@ -80,10 +80,10 @@ type PaymentInfo @model {
   createdAt: DateTime!
   updatedAt: DateTime!
   owner: String!
-  cvv: Number!
-  cardNumber: Number!
-  expMonth: expMonth!
-  expYear: expYear!
+  cvv: String!
+  cardNumber: String!
+  expMonth: Expmonth!
+  # expYear: Expyear!
 }
 
 # The following types define the data model of the example service
