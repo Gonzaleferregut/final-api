@@ -1,25 +1,57 @@
-# The following types define the data model of the example service
-# based on which the GraphQL API is generated
-
-type User @model {
-  id: ID! @isUnique
-  name: String
-  dateOfBirth: DateTime
-
-  # Uncomment below - you can declare relations between models like this
-
-  # posts: [Post!]! @relation(name: "UserPosts")
+enum Interest {
+  READING
+  MATH
+  WRITING
+  HOMEWORK
 }
 
+enum expMonth {
+  JANUARY
+  FEBRUARY
+  MARCH
+  APRIL
+  MAY
+  JUNE
+  JULY
+  AUGUST
+  SEPTEMBER
+  OCTOBER
+  NOVEMBER
+  DECEMBER
+}
 
-Uncomment the model below as well
+enum expYear {
+  2025
+  2024
+  2023
+  2022
+  2021
+  2020
+  2019
+  2018
+  2017
+  2016
+  2015
+  2014
+  2013
+}
 
-type Post @model {
+type Contact @model{
   id: ID! @isUnique
-  title: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  fullName: String!
+  email: String! @isUnique
+  phone: String!
+  interest: Interest!
+}
 
-  # Every relation also required a back-relation (to determine 1:1, 1:n or n:m)
-  author: User! @relation(name: "UserPosts")
+type Login @model{
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  userName: String!
+  passWord: String!
 }
 
 # added by email-password template: (please uncomment)
@@ -30,3 +62,52 @@ type User @model {
   email: String! @isUnique
   password: String!
 }
+
+type PersonalInfo @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  studentName: String!
+  parentName: String!
+  parentEmail: String!
+  parentAddress: String!
+  parentPhoneNumber: Number!
+  teacherEmail: String!
+}
+
+type PaymentInfo @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  owner: String!
+  cvv: Number!
+  cardNumber: Number!
+  expMonth: expMonth!
+  expYear: expYear!
+}
+
+# The following types define the data model of the example service
+# based on which the GraphQL API is generated
+
+# type User @model {
+#   id: ID! @isUnique
+#   name: String
+#   dateOfBirth: DateTime
+#
+#   # Uncomment below - you can declare relations between models like this
+#
+#   # posts: [Post!]! @relation(name: "UserPosts")
+# }
+
+
+# Uncomment the model below as well
+#
+# type Post @model {
+#   id: ID! @isUnique
+#   title: String!
+#
+#   # Every relation also required a back-relation (to determine 1:1, 1:n or n:m)
+#   author: User! @relation(name: "UserPosts")
+# }
+
+# added by email-password template: (please uncomment)
