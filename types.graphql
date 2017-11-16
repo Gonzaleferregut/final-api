@@ -59,7 +59,7 @@ type PaymentInfo @model {
   cvv: String!
   cardNumber: String!
   expMonth: Expmonth!
-  expYear: [Int!]
+  expYear: String!
 }
 
 # The following types define the data model of the example service
