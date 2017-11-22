@@ -30,8 +30,7 @@ type Contact @model{
   interest: Interest!
 }
 
-# add relation between user personal info and PaymentInfo
-# create new type for quote generator
+# add relation between user and PaymentInfo
 type User @model {
   id: ID! @isUnique
   createdAt: DateTime!
