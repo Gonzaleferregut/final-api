@@ -64,6 +64,13 @@ type PaymentInfo @model {
   expYear: String!
 }
 
+type Messages @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  
+}
+
 # The following types define the data model of the example service
 # based on which the GraphQL API is generated
 
